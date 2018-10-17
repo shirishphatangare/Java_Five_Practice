@@ -20,7 +20,7 @@ public class ConcurrentHashMapTest {
 		
 		while(it.hasNext()){
 			hashMap.put("4", "44"); // No ConcurrentModificationException even for normal HashMap, since we are not changing structure of Hashmap. Just update to existing value
-			hashMap.put("3", "44"); // ConcurrentModificationException for normal HashMap but not for ConcurrentHashMap
+			hashMap.put("5", "44"); // ConcurrentModificationException for normal HashMap but not for ConcurrentHashMap
 			System.out.println(it.next());
 		}
 		System.out.println(hashMap);
