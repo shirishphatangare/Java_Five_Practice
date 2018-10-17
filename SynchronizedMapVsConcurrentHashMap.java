@@ -4,6 +4,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* Differences between Collections.SynchronizedMap and ConcurrentHashMap */ 
 
+/* Depending upon the level of concurrency required the concurrent HashMap is internally divided into segments. 
+If the level of concurrency required is not specified then it is takes 16 as the default value. So internally the ConcurrentHashMap will be divided into 16 segments. 
+Each Segment behaves independently.
+
+We use ConcurrentHashMap when a high level of concurrency is required. But already SynchronizedMap is present so what advantages does ConcurrentHashMap have over synchronized map.Both are thread safe. The major advantage is in case of synchronizedMap 
+every write operation acquires lock on entire SynchronizedMap while in case of ConcurrentHashMap the lock is only on one of the segments.
+*/
+
+
 public class SynchronizedMapVsConcurrentHashMap {
 
 	public static void main(String[] args) {
